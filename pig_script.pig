@@ -1,3 +1,5 @@
+--pig_script.pig: transforms visits.txt for a Hive table
+
 a1 = LOAD '/user/hadoop/bigrams/googlebooks-eng-us-all-2gram-20120701-i?' AS (ngram:chararray,year:int,occurrences:float,books:float);
 a2 = GROUP a1 BY ngram;
 a3 = FOREACH a2 GENERATE group,SUM(a1.occurrences) AS total_occur,SUM(a1.books) AS total_books,SUM(a1.occurrences)/SUM(a1.books) AS avg_occur,MIN(a1.year) AS min_year,MAX(a1.year) AS max_year,COUNT(a1.year) as records;
