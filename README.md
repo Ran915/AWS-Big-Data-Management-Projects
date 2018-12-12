@@ -1,5 +1,4 @@
 ## Data-Management
-Projects and assignments in ISTM 6212 Data Management
 
 ### Featured Projects:
 
